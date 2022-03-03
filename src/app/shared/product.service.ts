@@ -17,10 +17,26 @@ export class ProductService {
       .catch(this.error);
   }
 
+  createProduct(data): Promise<void | any> {
+    return this.http.post(this.Url, data)
+      .toPromise()
+      .then(response => response)
+      .catch(this.error);
+  }
+
 
   getProductById( id: number): Promise<void | any> {
     let url = this.Url  + "/" + id;
     return this.http.get(url)
+      .toPromise()
+      .then(response => response)
+      .catch(this.error);
+  }
+
+  updateProductById( product: any): Promise<void | any> {
+    let url = this.Url  + "/" + product.id;
+
+    return this.http.put(url,product)
       .toPromise()
       .then(response => response)
       .catch(this.error);
