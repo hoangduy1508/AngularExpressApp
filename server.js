@@ -21,7 +21,7 @@ routes(app)
 // Create link to Angular build directory
 // The `ng build` command will save the result
 // under the `dist` folder.
-var distDir = __dirname + "/dist/";
+var distDir = __dirname + "/dist/AngularExpressApp";
 app.use(express.static(distDir));
 
 // Init the server
